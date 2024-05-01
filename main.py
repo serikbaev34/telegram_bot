@@ -29,7 +29,7 @@ async def cmd_start(message: types.Message):
 @dp.message(F.text.lower() == "аниме авы")
 async def anime(message: types.Message):
     album_builder = MediaGroupBuilder(
-        caption="Nagi"
+        caption="Персонаж - Nagi        anime - Синяя_Тюрьма"
     )
     album_builder.add_photo(
         media="https://sun9-36.userapi.com/impg/I92509_rGuHEzXtMdUj7n4QkvknqQjTs5_6aZw/BqsfGSgtM7M.jpg?size=807x807&quality=95&sign=480ba4b41fb1b52463dad59824e91d84&c_uniq_tag=7RoPF8K4XPyTNIOQtPjxIvnKLMCtrHsIf8JlLiyaJVo&type=album"
@@ -47,7 +47,7 @@ async def anime(message: types.Message):
         media=album_builder.build())
     
     album_builder = MediaGroupBuilder(
-            caption="Gojo"
+            caption="Персонаж - Gojo        anime - Магическая_Битва"
     )
     album_builder.add_photo(
         media="https://mixmag.io/wp-content/pics4/prew/1674798706_2-2.jpg"
@@ -63,12 +63,25 @@ async def anime(message: types.Message):
     )
     await message.answer_media_group(
         media=album_builder.build())
-
-
-
-    image_from_url = URLInputFile("")
-    result = await message.answer_photo(image_from_url, caption = "test")                                        
-
+    
+    album_builder = MediaGroupBuilder(
+        caption="Персонаж - Rubi        anime - Звездное_Дитя"
+    )
+    album_builder.add_photo(
+        media="https://sun9-36.userapi.com/impg/I92509_rGuHEzXtMdUj7n4QkvknqQjTs5_6aZw/BqsfGSgtM7M.jpg?size=807x807&quality=95&sign=480ba4b41fb1b52463dad59824e91d84&c_uniq_tag=7RoPF8K4XPyTNIOQtPjxIvnKLMCtrHsIf8JlLiyaJVo&type=album"
+    )
+    album_builder.add_photo(
+        media="https://i.pinimg.com/736x/21/89/a0/2189a064debd282db31c64d000074774.jpg"
+    )
+    album_builder.add_photo(
+        media="https://i.pinimg.com/736x/1b/c4/19/1bc419fb38ff634f22212dee0e852a58.jpg"
+    )
+    album_builder.add_photo(
+        media="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/0660f85d-8626-4dc5-aa7b-06f70664117d/dg3d4po-6a97bac0-34e5-4f25-84ee-619bf4ae7fb4.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcLzA2NjBmODVkLTg2MjYtNGRjNS1hYTdiLTA2ZjcwNjY0MTE3ZFwvZGczZDRwby02YTk3YmFjMC0zNGU1LTRmMjUtODRlZS02MTliZjRhZTdmYjQuanBnIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.Yt0ComFISA4cQNocA9fTn86kif0NGwJYRlAvxYp6Nrc"
+    )
+    await message.answer_media_group(
+        media=album_builder.build())
+    
 
 # Запуск процесса поллинга новых апдейтов
 async def main():
