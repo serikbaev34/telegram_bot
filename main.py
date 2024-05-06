@@ -21,7 +21,7 @@ dp = Dispatcher()
 async def cmd_start(message: types.Message):
     kb = [
         [types.KeyboardButton(text="Аниме авы")],
-        [types.KeyboardButton(text="авы пейсажи")]
+        [types.KeyboardButton(text="пейсажи")]
     ]
     keyboard = types.ReplyKeyboardMarkup(keyboard=kb)
     await message.answer("Какие авы тебе нужны?", reply_markup=keyboard)
@@ -68,7 +68,7 @@ async def anime(message: types.Message):
         caption="Персонаж - Rubi        anime - Звездное_Дитя"
     )
     album_builder.add_photo(
-        media="https://sun9-36.userapi.com/impg/I92509_rGuHEzXtMdUj7n4QkvknqQjTs5_6aZw/BqsfGSgtM7M.jpg?size=807x807&quality=95&sign=480ba4b41fb1b52463dad59824e91d84&c_uniq_tag=7RoPF8K4XPyTNIOQtPjxIvnKLMCtrHsIf8JlLiyaJVo&type=album"
+        media="https://i.pinimg.com/736x/3d/81/24/3d81248039f2d5c39fe079e4ec27e38b.jpg"
     )
     album_builder.add_photo(
         media="https://i.pinimg.com/736x/21/89/a0/2189a064debd282db31c64d000074774.jpg"
@@ -79,6 +79,53 @@ async def anime(message: types.Message):
     album_builder.add_photo(
         media="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/0660f85d-8626-4dc5-aa7b-06f70664117d/dg3d4po-6a97bac0-34e5-4f25-84ee-619bf4ae7fb4.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcLzA2NjBmODVkLTg2MjYtNGRjNS1hYTdiLTA2ZjcwNjY0MTE3ZFwvZGczZDRwby02YTk3YmFjMC0zNGU1LTRmMjUtODRlZS02MTliZjRhZTdmYjQuanBnIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.Yt0ComFISA4cQNocA9fTn86kif0NGwJYRlAvxYp6Nrc"
     )
+    await message.answer_media_group(
+        media=album_builder.build())
+    
+@dp.message(F.text.lower() == "пейсажи")
+async def art(message: types.Message):
+    album_builder = MediaGroupBuilder(
+        caption= "Пейсажи"
+    )
+    album_builder.add_photo(
+    media="https://i.pinimg.com/originals/c9/51/47/c951479f3bba1d473801c03f993843c0.jpg"
+        )
+
+    album_builder.add_photo(
+        media="https://i.pinimg.com/236x/78/0b/73/780b73fcabd1266f44c6127a2a0e467e.jpg"
+        )
+
+    album_builder.add_photo(
+        media="https://i.pinimg.com/736x/c5/5f/af/c55faf1299da96b18e3aea9ddb3d44f8.jpg"
+        )
+
+    album_builder.add_photo(
+        media="https://i.pinimg.com/736x/93/7a/3c/937a3c4f494fb100b8449fd7a87671ad.jpg"
+        )
+    
+    await message.answer_media_group(
+        media=album_builder.build())
+    
+    album_builder = MediaGroupBuilder(
+        caption= "Пейсаж море"
+    )
+
+    album_builder.add_photo(
+        media="https://i.pinimg.com/564x/53/5d/ed/535ded0607931f18bfc3d823739d4f84.jpg"
+        )
+    
+    album_builder.add_photo(
+        media="https://i.pinimg.com/564x/53/5d/ed/535ded0607931f18bfc3d823739d4f84.jpg"
+        ) 
+
+    album_builder.add_photo(
+        media="https://i.pinimg.com/736x/1a/0c/5a/1a0c5a716be89dec7b9b3d01e43ad456.jpg"
+        )
+    
+    album_builder.add_photo(
+        media="https://i.pinimg.com/736x/83/5b/79/835b79162cf863539c49addb91ab8ce7.jpg"
+        )
+    
     await message.answer_media_group(
         media=album_builder.build())
     
